@@ -33,13 +33,15 @@ public class Zhebryk_Hw10 {
         }
 //        System.out.println(Arrays.toString(lot));
 //        System.out.println(Arrays.toString(gamer));
+        int count = 0;
         System.out.print("Співпали такі елементи: ");
         for (int i = 0; i < n; i++) {
             if (lot[i] == gamer[i]) {
+                count++;
                 System.out.print("№ " + (i + 1) + " зі значенням " + lot[i] + "; ");
             }
         }
-        System.out.print("і все.");
+        System.out.print("і все. Кількість співпадінь " + count + ".");
     }
 }
 
