@@ -8,7 +8,7 @@ public class Zhebryk_Hw11 {
 //    розміром M x N перший та N x M другий.
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int m = getSize(scanner); //чомусь при вводі невірних даних не зациклюється до моменту правильного вводу.
+        int m = getSize(scanner);
         int n = getSize(scanner);
         int[][] first = new int[m][n];
         int[][] second = new int[n][m];
@@ -40,14 +40,15 @@ public class Zhebryk_Hw11 {
         while (true) {
             if (scanner.hasNextInt()) {
                 checkInput = scanner.nextInt();
+                if (checkInput >= 0) {
+                    break;
+                } else {
+                    System.out.println("Невірний формат введених даних. Потрібно ввести ціле додатне число, більше ніж 0.");
+                }
             } else {
                 System.out.println("Невірний формат введених даних. Потрібно ввести ціле додатне число, більше ніж 0.");
-                break;
+                scanner.nextLine();
             }
-            if (checkInput <= 0) {
-                System.out.println("Невірний формат введених даних. Потрібно ввести ціле додатне число, більше ніж 0.");
-                break;
-            } else break;
         }
         return checkInput;
     }
